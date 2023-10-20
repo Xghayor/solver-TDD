@@ -1,10 +1,8 @@
 class Solver
-  def self.factorial(n)
-    if n < 0
-      raise ArgumentError, "Factorial is not defined for negative numbers"
-    end
+  def self.factorial(_number)
+    raise ArgumentError, 'Factorial is not defined for negative numbers' if n.negative?
 
-    if n == 0
+    if n.zero?
       1
     else
       (1..n).reduce(:*)
@@ -15,7 +13,7 @@ class Solver
     word.reverse
   end
 
-  def self.fizzbuzz(n)
+  def self.fizzbuzz(_number)
     if (n % 3).zero? && (n % 5).zero?
       'fizzbuzz'
     elsif (n % 3).zero?
